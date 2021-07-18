@@ -3,11 +3,15 @@ import { FlatList, View, Text, StyleSheet, TouchableHighlight, TouchableHighligh
 import { useNavigation } from '@react-navigation/native';
 
 const availableZipItems = [
-    { place: 'Hatyai', code: '90110' },
-    { place: 'Trang', code: '92000' },
-    { place: 'Chiangmai', code: '50000' },
-    { place: 'Khonkaen', code: '40000' },
-    { place: 'Chonburi', code: '20000' },
+    
+    { place: '  Hatyai', code: '90110' },
+    { place: '  Trang', code: '92000' },
+    { place: '  Chiangmai', code: '50000' },
+    { place: '  Khonkaen', code: '40000' },
+    { place: '  Chonburi', code: '20000' },
+    { place: '  Kabi', code: '81000' },
+    { place: '  Suratthani', code: '84000' },
+    { place: '  phuket', code: '83000' },
 ]
 
 const ZipItem = ({place, code, navigation}) => (
@@ -15,6 +19,7 @@ const ZipItem = ({place, code, navigation}) => (
         navigation.navigate('Weather', {zipCode: code})
     }}>
          <View style={styles.zipItem}>
+             
              <Text>{place}</Text>
              <Text>{code}</Text>
          </View>
