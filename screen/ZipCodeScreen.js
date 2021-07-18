@@ -2,7 +2,7 @@ import React from 'react';
 import { FlatList, View, Text, StyleSheet, TouchableHighlight, TouchableHighlightComponent} from "react-native"
 import { useNavigation } from '@react-navigation/native';
 
-const availableZipItems = [
+const availableZipItemsNorth = [
     
     { place: '  Hatyai', code: '90110' },
     { place: '  Trang', code: '92000' },
@@ -11,7 +11,26 @@ const availableZipItems = [
     { place: '  Chonburi', code: '20000' },
     { place: '  Kabi', code: '81000' },
     { place: '  Suratthani', code: '84000' },
-    { place: '  phuket', code: '83000' },
+    { place: '  Phuket', code: '83000' },
+]
+const availableZipItemsCentral = [
+    
+    { place: '  Hatyai', code: '90110' },
+    { place: '  Trang', code: '92000' },
+    { place: '  Chiangmai', code: '50000' },
+    { place: '  Khonkaen', code: '40000' },
+    { place: '  Chonburi', code: '20000' },
+    { place: '  Kabi', code: '81000' },
+    { place: '  Suratthani', code: '84000' },
+    { place: '  Phuket', code: '83000' },
+]
+const availableZipItemsSouth = [
+    
+    { place: '  Hatyai', code: '90110' },
+    { place: '  Trang', code: '92000' },
+    { place: '  Kabi', code: '81000' },
+    { place: '  Suratthani', code: '84000' },
+    { place: '  Phuket', code: '83000' },
 ]
 
 const ZipItem = ({place, code, navigation}) => (
@@ -20,8 +39,8 @@ const ZipItem = ({place, code, navigation}) => (
     }}>
          <View style={styles.zipItem}>
              
-             <Text>{place}</Text>
-             <Text>{code}</Text>
+             <Text style={styles.zipPlace}>{place}</Text>
+             <Text style={styles.zipCode}>{code}</Text>
          </View>
      </TouchableHighlight>
 )
@@ -31,13 +50,29 @@ export default function zipCodeScreen(){
     const navigation = useNavigation()
     return (
         <View>
-            <Text style={styles.home}> AAA </Text>
+            <Text style={styles.home}> Weather in Thailand </Text>
+
+            <Text style={styles.line}> North </Text>
 
             <FlatList
-              data = {availableZipItems}
+              data = {availableZipItemsCentral}
               keyExtractor = {item => item.code}
               renderItem = {({item}) => <ZipItem {...item} navigation={navigation}/>}
         />
+            <Text style={styles.line}> Cental  </Text>
+
+            <FlatList
+              data = {availableZipItemsSouth}
+              keyExtractor = {item => item.code}
+              renderItem = {({item}) => <ZipItem {...item} navigation={navigation}/>}
+        />
+            <Text style={styles.line}> South  </Text>
+
+            <FlatList
+              data = {availableZipItemsSouth}
+              keyExtractor = {item => item.code}
+              renderItem = {({item}) => <ZipItem {...item} navigation={navigation}/>}
+/>
         </View>
     )
 }
@@ -49,10 +84,21 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     zipPlace: {
-         flex: 1,
+        textAlign: 'left',
+        padding: 2,
+        fontSize: 16,
+        color: 'rgb(51, 255, 216)',
+        backgroundColor: `rgb(26, 107, 217)`,
+      
     },
     zipCode: {
         flex: 1,
+        textAlign: 'right',
+        padding: 2,
+        fontSize: 16,
+        color: 'rgb(51, 255, 216)',
+        backgroundColor: `rgb(26, 107, 217)`,
+        
     },
     home: {
         textAlign: 'left',
@@ -60,8 +106,9 @@ const styles = StyleSheet.create({
         fontSize: 30,
         color: 'rgb(51, 255, 216)',
         backgroundColor: `rgb(3, 37, 137)`,
-        width: '100%',
-        height: '20%',
+        /*width: '100%',
+        height: '20%',*/
 
     }
+    
 })
