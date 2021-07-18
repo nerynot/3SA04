@@ -30,11 +30,15 @@ const ZipItem = ({place, code, navigation}) => (
 export default function zipCodeScreen(){
     const navigation = useNavigation()
     return (
-        <FlatList
-            data = {availableZipItems}
-            keyExtractor = {item => item.code}
-            renderItem = {({item}) => <ZipItem {...item} navigation={navigation}/>}
+        <View>
+            <Text style={styles.home}> AAA </Text>
+
+            <FlatList
+              data = {availableZipItems}
+              keyExtractor = {item => item.code}
+              renderItem = {({item}) => <ZipItem {...item} navigation={navigation}/>}
         />
+        </View>
     )
 }
 
@@ -49,5 +53,15 @@ const styles = StyleSheet.create({
     },
     zipCode: {
         flex: 1,
+    },
+    home: {
+        textAlign: 'left',
+        padding: 9,
+        fontSize: 30,
+        color: 'rgb(51, 255, 216)',
+        backgroundColor: `rgb(3, 37, 137)`,
+        width: '100%',
+        height: '20%',
+
     }
 })
