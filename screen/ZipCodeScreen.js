@@ -4,25 +4,17 @@ import { useNavigation } from '@react-navigation/native';
 
 const availableZipItemsNorth = [
     
-    { place: '  Hatyai', code: '90110' },
-    { place: '  Trang', code: '92000' },
     { place: '  Chiangmai', code: '50000' },
     { place: '  Khonkaen', code: '40000' },
-    { place: '  Chonburi', code: '20000' },
-    { place: '  Kabi', code: '81000' },
-    { place: '  Suratthani', code: '84000' },
-    { place: '  Phuket', code: '83000' },
+    { place: '  Nan', code: '55000' },
+    { place: '  Maehongson', code: '58000' },
 ]
 const availableZipItemsCentral = [
     
-    { place: '  Hatyai', code: '90110' },
-    { place: '  Trang', code: '92000' },
-    { place: '  Chiangmai', code: '50000' },
-    { place: '  Khonkaen', code: '40000' },
-    { place: '  Chonburi', code: '20000' },
-    { place: '  Kabi', code: '81000' },
-    { place: '  Suratthani', code: '84000' },
-    { place: '  Phuket', code: '83000' },
+    { place: '  Bankkok', code: '10110' },
+    { place: '  Samutprakan', code: '10280' },
+    { place: '  Nonthaburi', code: '11000' },
+    { place: '  Ayutthaya', code: '13000' },
 ]
 const availableZipItemsSouth = [
     
@@ -55,14 +47,14 @@ export default function zipCodeScreen(){
             <Text style={styles.line}> North </Text>
 
             <FlatList
-              data = {availableZipItemsCentral}
+              data = {availableZipItemsNorth}
               keyExtractor = {item => item.code}
               renderItem = {({item}) => <ZipItem {...item} navigation={navigation}/>}
         />
             <Text style={styles.line}> Cental  </Text>
 
             <FlatList
-              data = {availableZipItemsSouth}
+              data = {availableZipItemsCentral}
               keyExtractor = {item => item.code}
               renderItem = {({item}) => <ZipItem {...item} navigation={navigation}/>}
         />
@@ -105,10 +97,16 @@ const styles = StyleSheet.create({
         padding: 9,
         fontSize: 30,
         color: 'rgb(51, 255, 216)',
-        backgroundColor: `rgb(3, 37, 137)`,
-        /*width: '100%',
-        height: '20%',*/
+        backgroundColor: `rgb(6, 42, 92)`,
+
+    },
+    line: {
+        textAlign: 'left',
+        padding: 9,
+        fontSize: 20,
+        color: 'rgb(51, 255, 216)',
+        backgroundColor: `rgb(13, 44, 210)`,
+        
 
     }
-    
 })
