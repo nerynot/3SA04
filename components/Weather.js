@@ -18,6 +18,8 @@ export default function Weather(props) {
                 .then((json) => {
                     setForecastInfo({
                          main: json.weather[0].main,
+                         name: json.name,
+                         country: json.sys.country,
                          description: json.weather[0].description,
                          temp: json.main.temp
                      });
@@ -49,7 +51,8 @@ const styles = StyleSheet.create({
     home: {
         textAlign: 'center',
         fontSize: 30,
-        color: 'rgb(3, 49, 91)',
+        color: 'rgb(1, 1, 1)',
+        fontWeight: 'bold',
        
     }
 });
