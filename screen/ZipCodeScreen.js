@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
         padding: 2,
         fontSize: 16,
         color: 'rgb(51, 255, 216)',
-        backgroundColor: `rgb(26, 107, 217)`,
+        backgroundColor: `rgb(18, 79, 142 )`,
       
     },
     zipCode: {
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
         padding: 2,
         fontSize: 16,
         color: 'rgb(51, 255, 216)',
-        backgroundColor: `rgb(26, 107, 217)`,
+        backgroundColor: `rgb(18, 79, 142 )`,
         
     },
     home: {
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
         padding: 9,
         fontSize: 20,
         color: 'rgb(51, 255, 216)',
-        backgroundColor: `rgb(13, 44, 210)`,
+        backgroundColor: `rgb(3, 61, 121 )`,
         
 
     }
